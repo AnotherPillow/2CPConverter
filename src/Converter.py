@@ -4,7 +4,7 @@ from .Logger import logger
 
 class Converter:
     manifest: dict = {}
-    shops: dict = {}
+    inputContent: dict = {}
     content: dict = {
         "Format": "2.0",
         "Changes": []
@@ -12,7 +12,7 @@ class Converter:
     
     def __init__(self):
         self.manifest = json5.load(open('input/manifest.json', encoding='utf8'))
-        self.shops = json5.load(open('input/content.json', encoding='utf8'))
+        self.inputContent = json5.load(open('input/content.json', encoding='utf8'))
 
         if os.path.exists('output'):
             shutil.rmtree('output')
